@@ -99,7 +99,7 @@ int main( int argc, char** argv )
 {
   ros::init(argc, argv, "add_markers_node");
   
-  AddMarker addMarker;
+  AddMarker add_marker;
   ros::spin();
 
   return 0; 
