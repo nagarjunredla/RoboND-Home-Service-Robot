@@ -2,13 +2,15 @@ cmake_minimum_required(VERSION 2.8.3)
 project(add_markers)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
-# add_compile_options(-std=c++11)
+add_compile_options(-std=c++11)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   roscpp
+  nav_msgs
+  visualization_msgs
 )
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -196,4 +198,6 @@ include_directories(
 # catkin_add_nosetests(test)
 
 add_executable(add_markers src/add_markers.cpp)
+add_executable(add_markers_node src/add_markers_node.cpp)
 target_link_libraries(add_markers ${catkin_LIBRARIES})
+target_link_libraries(add_markers_node ${catkin_LIBRARIES})
